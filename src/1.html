@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> </title>
+</head>
+<body>
+	<p>洗牌算法 将列表数据打乱随机打乱</p>
+	0-15
+	Math.random() [0,1)之间的小数
+	<script type="text/javascript">
+		function getRandomInt(min, max) {
+			return Math.floor(Math.random() * (max - min + 1) + min)
+		}
+		var arr = [1,2,3,4,5,6,7]
+		function shuffle(arr) {
+			// 防止修改后原arr 也发生改变
+			let _arr = arr.slice()
+			for (let i =0; i < _arr.length; i++){
+				let j = getRandomInt(0, i)
+				let t = _arr[i]
+				_arr[i] = _arr[j]
+				_arr[j] = t
+			}
+			return _arr
+		}
+		console.log(shuffle(arr))
+	</script>
+	<p>es6 arr.findIndex  找到数组中的索引</p>
+	<script type="text/javascript">
+		var arr = [0,{id:1},2,3,4,5,6,7]
+		let index = arr.findIndex((item) => {
+			return item.id == 1
+		})
+		console.log(index)
+	</script>
+</body>
